@@ -1,37 +1,24 @@
-
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>PDF Viewer</title>
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-    <style>
-        #pdf-container {
-            width: 100%;
-            height: 600px;
-        }
-    </style>
+<html> <head>
+<title>
+Embed PDF file autoresponsive using object
+</title>
+<!-- I am using external style sheet for the layout of the table -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="pdf-container"></div>
-
-    <script>
-        // URL of the PDF file
-        const pdfUrl = 'Python for Kids - A Playful Introduction to Programming.pdf';
-
-        // Get the container element
-        const container = document.getElementById('pdf-container');
-
-        // Load and render the PDF
-        pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                pdf.getPage(pageNum).then(page => {
-                    const canvas = document.createElement('canvas');
-                    container.appendChild(canvas);
-                    page.render({ canvasContext: canvas.getContext('2d'), viewport: page.getViewport({ scale: 1.5 }) });
-                });
-            }
-        });
-    </script>
+<table border="1" width="100%" align="center" class="tableUserInfo">
+<tr>
+<td align="center">
+</tr>
+<tr>
+Embed pdf file using "object" that support all the degices and almost all the browsers </td>
+<td align="center">
+<object style="width: 80%;" height="450" data="https://docs.google.com/gview?embedded=true&amp; url=http://www.yourwebsitename.in/mediafolder/EOI.pdf">
+<p>
+Your web browser doesn't have a pdf plugin. Instead you can <a href="../EOIDelhi/EOI.pdf"> Download from here </a>
+</p> </object>
+</td>
+</tr>
+</table>
 </body>
 </html>
